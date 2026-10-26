@@ -1,5 +1,6 @@
 package part02;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,15 @@ public class CollectionsBasics {
      * @return The maximum value in the list.
      */
     public int maximum(List<Integer> numbers) {
-        return 0; // TODO: implement this method
+        int max = numbers.get(0);
+
+        for (int number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+        }
+
+    return max;
     }
 
     /**
@@ -30,11 +39,16 @@ public class CollectionsBasics {
      * @return The sum of all integers in the list.
      */
     public int sum(List<Integer> numbers) {
-        return 0; // TODO: implement this method
+        int total = 0;
+        for (int number : numbers) {
+            total += number;
+        }
+        return total;
     }
 
     /**
-     * Returns a new list, where the numbers from the given list are multiplied by
+     * 
+Returns a new list, where the numbers from the given list are multiplied by
      * the given factor. The order of the numbers in the new list should be the same
      * as in the original list. For example, if the given list contains the
      * numbers -1, 0 and 100 and the factor is 2, the result is a new list
@@ -47,9 +61,12 @@ public class CollectionsBasics {
      * @return A new list, where the numbers are multiplied by the given factor.
      */
     public List<Integer> multiply(List<Integer> numbers, int factor) {
-        return null; // TODO: implement this method
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            result.add(number * factor);
+        }
+        return result;
     }
-
     /**
      * Generates and returns a list, which contains integer numbers between the
      * given start and end values. The start value is included in the list, but the
@@ -61,7 +78,13 @@ public class CollectionsBasics {
      * @return A list containing the numbers between the start and end values.
      */
     public List<Integer> range(int start, int end) {
-        return null; // TODO: implement this method
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = start; i < end; i++) {
+            result.add(i);
+        }
+
+        return result;
     }
 
     /**
@@ -73,7 +96,11 @@ public class CollectionsBasics {
      * @return The concatenated string.
      */
     public String concatenateStrings(List<String> strings) {
-        return ""; // TODO: implement this method
+        StringBuilder result = new StringBuilder();
+        for (String text : strings) {
+            result.append(text);
+        }
+        return result.toString();
     }
 
     /**
